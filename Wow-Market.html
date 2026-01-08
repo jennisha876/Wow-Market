@@ -13,10 +13,363 @@
     <!-- Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
+<<<<<<< HEAD
 <style>
     body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
+=======
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="Wow-Market.html" aria-label="WOW Market home">
+        <div class="brand__mark"><i class="fa-solid fa-bag-shopping"></i></div>
+        <div class="brand__text">
+          <p class="brand__title">WOW Market</p>
+          <p class="brand__tagline">Shop smart. Feel wow.</p>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#featured">Featured</a>
+        <a href="#categories">Categories</a>
+        <a href="clothing-shoes-accessories.html">Shoes</a>
+        <a href="ELECTRONICS.html">Electronics</a>
+        <a href="pharmacy.html">Pharmacy</a>
+        <a href="Pet&Toys.html">Pets &amp; Toys</a>
+      </nav>
+
+      <div class="header-actions">
+        <form class="search" id="searchForm" role="search">
+          <input id="searchInput" type="search" placeholder="Search products" aria-label="Search products">
+          <button type="submit" aria-label="Run product search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <a class="btn secondary" href="purchase.html" aria-label="View cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Cart</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">New season · Bold drops</p>
+        <h1>Everything for your everyday, delivered.</h1>
+        <p class="lead">Fresh sneakers, consoles, pharmacy staples, and pet essentials in one cart. Local stock, sharp prices, and islandwide delivery so you can get on with life.</p>
+        <div class="product-actions" aria-label="Primary actions">
+          <a class="btn primary" href="#featured">Shop featured</a>
+          <a class="btn secondary" href="#categories">Browse categories</a>
+          <a class="btn link" href="MissionVision.html">About us</a>
+        </div>
+        <div class="trust-badges" aria-label="Store highlights">
+          <div class="trust-badge"><i class="fa-solid fa-truck"></i><span>Same-day delivery in select parishes</span></div>
+          <div class="trust-badge"><i class="fa-solid fa-shield-halved"></i><span>Secure checkout &amp; buyer protection</span></div>
+          <div class="trust-badge"><i class="fa-solid fa-arrow-rotate-left"></i><span>14-day easy returns</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="slide1.png" alt="Seasonal arrivals across fashion and electronics">
+        <div class="hero-floating">
+          <i class="fa-solid fa-bolt"></i>
+          <span>50% off your first order over JMD$500</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="promo">
+      <div class="promo-banner">
+        <div><strong>Limited:</strong> Take 50% off your first checkout over JMD$500. Apply at payment.</div>
+        <div class="product-actions">
+          <a class="btn primary" href="purchase.html">Claim offer</a>
+          <a class="btn secondary" href="#featured">See best sellers</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="categories">
+      <div class="section__head">
+        <div>
+          <h2 class="section__title">Shop by category</h2>
+          <p class="section__subtitle">Curated picks we restock weekly.</p>
+        </div>
+        <a class="btn link" href="History.html">Our story</a>
+      </div>
+      <div class="category-grid">
+        <a class="category-card" href="clothing-shoes-accessories.html">
+          <div class="category-card__body">
+            <div class="pill label-hot"><i class="fa-solid fa-fire"></i><span>Fresh</span></div>
+            <div>
+              <h3>Shoes &amp; Style</h3>
+              <p>Statement heels, slides, and sneakers that make every fit land.</p>
+            </div>
+            <img src="heels1.jpg" alt="Assorted heels and shoes">
+          </div>
+        </a>
+        <a class="category-card" href="ELECTRONICS.html">
+          <div class="category-card__body">
+            <div class="pill"><i class="fa-solid fa-bolt"></i><span>Trending</span></div>
+            <div>
+              <h3>Electronics</h3>
+              <p>Consoles, laptops, and audio built for work and play.</p>
+            </div>
+            <img src="xboxx.jpg" alt="Xbox console on desk">
+          </div>
+        </a>
+        <a class="category-card" href="pharmacy.html">
+          <div class="category-card__body">
+            <div class="pill"><i class="fa-solid fa-heart-pulse"></i><span>Care</span></div>
+            <div>
+              <h3>Pharmacy</h3>
+              <p>Day-to-day essentials, pain relief, and quick health picks.</p>
+            </div>
+            <img src="Pet Drugs.png" alt="Health and pharmacy essentials">
+          </div>
+        </a>
+        <a class="category-card" href="Pet&Toys.html">
+          <div class="category-card__body">
+            <div class="pill"><i class="fa-solid fa-paw"></i><span>New</span></div>
+            <div>
+              <h3>Pets &amp; Toys</h3>
+              <p>Cozy beds, chew toys, and treats for every furry friend.</p>
+            </div>
+            <img src="Pet Toys.png" alt="Pet toys and accessories">
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="featured">
+      <div class="section__head">
+        <div>
+          <h2 class="section__title">Featured this week</h2>
+          <p class="section__subtitle">Picked by the WOW crew based on what you love.</p>
+        </div>
+        <a class="btn link" href="purchase.html">Go to checkout</a>
+      </div>
+      <div class="product-grid" id="productGrid">
+        <article class="product-card" data-product="black laced heels">
+          <img src="heels.jpg" alt="Black laced heels">
+          <div class="product-card__meta">
+            <span>Heels</span>
+            <span class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+          </div>
+          <h3>Black Laced Heels</h3>
+          <div class="product-card__meta">
+            <span class="price">$20.00</span>
+            <a class="btn link" href="purchase.html">Add</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="bronze evening heel">
+          <img src="heels4.jpg" alt="Bronze evening heel">
+          <div class="product-card__meta">
+            <span>Heels</span>
+            <span class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+          </div>
+          <h3>Bronze Evening Heel</h3>
+          <div class="product-card__meta">
+            <span class="price">$65.00</span>
+            <a class="btn link" href="purchase.html">Add</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="nike sneaker white">
+          <img src="sneakerw.png" alt="White Nike sneaker">
+          <div class="product-card__meta">
+            <span>Sneakers</span>
+            <span class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+          </div>
+          <h3>White Nike Sneaker</h3>
+          <div class="product-card__meta">
+            <span class="price">$40.00</span>
+            <a class="btn link" href="purchase.html">Add</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="brown sneaker">
+          <img src="sneakers.png" alt="Brown and white sneaker">
+          <div class="product-card__meta">
+            <span>Sneakers</span>
+            <span class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+          </div>
+          <h3>Brown &amp; White Sneaker</h3>
+          <div class="product-card__meta">
+            <span class="price">$45.00</span>
+            <a class="btn link" href="purchase.html">Add</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="macbook laptop">
+          <img src="mbook.jpg" alt="Apple MacBook laptop">
+          <div class="product-card__meta">
+            <span>Electronics</span>
+            <span class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+          </div>
+          <h3>MacBook (2024)</h3>
+          <div class="product-card__meta">
+            <span class="price">$2,000.00</span>
+            <a class="btn link" href="purchase.html">Add</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="gaming pc">
+          <img src="gaming.avif" alt="Custom gaming PC">
+          <div class="product-card__meta">
+            <span>Electronics</span>
+            <span class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+          </div>
+          <h3>Gaming PC Build</h3>
+          <div class="product-card__meta">
+            <span class="price">$3,222.00</span>
+            <a class="btn link" href="purchase.html">Add</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="xbox console">
+          <img src="xboxx.jpg" alt="Xbox console bundle">
+          <div class="product-card__meta">
+            <span>Consoles</span>
+            <span class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+          </div>
+          <h3>Xbox Bundle</h3>
+          <div class="product-card__meta">
+            <span class="price">$300.20</span>
+            <a class="btn link" href="purchase.html">Add</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="pet chew toys">
+          <img src="Pet Toys.png" alt="Pet chew toys">
+          <div class="product-card__meta">
+            <span>Pets</span>
+            <span class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+          </div>
+          <h3>Chew Toys Pack</h3>
+          <div class="product-card__meta">
+            <span class="price">$18.00</span>
+            <a class="btn link" href="purchase.html">Add</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="plush pet bed">
+          <img src="Pet Beds.png" alt="Plush pet bed">
+          <div class="product-card__meta">
+            <span>Pets</span>
+            <span class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+          </div>
+          <h3>Plush Pet Bed</h3>
+          <div class="product-card__meta">
+            <span class="price">$85.00</span>
+            <a class="btn link" href="purchase.html">Add</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="stack-banner">
+        <div class="stack-card">
+          <h3>Pharmacy essentials on demand</h3>
+          <p>Cold &amp; flu relief, daily vitamins, and must-haves ship same-day in select parishes.</p>
+          <a class="btn secondary" href="pharmacy.html">Shop pharmacy</a>
+        </div>
+        <div class="stack-card">
+          <h3>Comfort for every pet</h3>
+          <p>Beds, toys, and healthy treats to keep tails wagging and whiskers happy.</p>
+          <a class="btn secondary" href="Pet&Toys.html">Shop pets &amp; toys</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="testimonial">
+        <div>
+          <p class="eyebrow">Community loved</p>
+          <blockquote>“Checkout is smooth, delivery is quick, and the selection beats every local store I tried.”</blockquote>
+          <footer>— Shanice, Kingston</footer>
+        </div>
+        <div class="video-card" aria-label="Promo video">
+          <video controls poster=\"slide2.png\">
+            <source src=\"promo-video.mp4\" type=\"video/mp4\">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="newsletter">
+      <div class="newsletter">
+        <div>
+          <p class="eyebrow">Never miss a drop</p>
+          <h3>Join the WOW list</h3>
+          <p class="section__subtitle">Early access to restocks, price drops, and weekend flash deals.</p>
+        </div>
+        <form id="newsletterForm">
+          <input type="email" name="email" aria-label="Email" placeholder="you@example.com" required>
+          <button class="btn primary" type="submit">Notify me</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <div>
+        <h4>WOW Market</h4>
+        <p>28 Manchester Road, Manchester Jamaica, West Indies</p>
+        <p>customerservice@wow.com.jm · (876) 969-1329</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="clothing-shoes-accessories.html">Shoes</a></li>
+          <li><a href="ELECTRONICS.html">Electronics</a></li>
+          <li><a href="pharmacy.html">Pharmacy</a></li>
+          <li><a href="Pet&Toys.html">Pets &amp; Toys</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="History.html">History</a></li>
+          <li><a href="MissionVision.html">Mission &amp; Vision</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href=\"https://facebook.com\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Facebook\"><i class=\"fa-brands fa-facebook\"></i> Facebook</a></li>
+          <li><a href=\"https://instagram.com\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Instagram\"><i class=\"fa-brands fa-instagram\"></i> Instagram</a></li>
+          <li><a href=\"https://twitter.com\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Twitter\"><i class=\"fa-brands fa-x-twitter\"></i> Twitter</a></li>
+          <li><a href=\"https://linkedin.com\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"LinkedIn\"><i class=\"fa-brands fa-linkedin\"></i> LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 WOW Market. All rights reserved.</span>
+      <span>Built for shoppers across Jamaica.</span>
+    </div>
+  </footer>
+
+  <script>
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+    const productGrid = document.getElementById('productGrid');
+    const newsletterForm = document.getElementById('newsletterForm');
+
+    function filterProducts(event) {
+      if (event) event.preventDefault();
+      const term = (searchInput.value || '').toLowerCase().trim();
+      const cards = productGrid.querySelectorAll('[data-product]');
+      cards.forEach(card => {
+        const match = card.dataset.product.toLowerCase().includes(term);
+        card.style.display = !term || match ? '' : 'none';
+      });
+>>>>>>> 557c174 (Fix website: update purchase checkout page with modern styling and form validation)
     }
 
     /* Navbar */
