@@ -1,0 +1,540 @@
+<!--
+  Wow Market Admin Dashboard
+  Created: 2022 | Updated: 2026
+  Authors: Jennisha Smith, Shani Parchment, Alethea Robinson, Lemard Sterling
+  Admin Panel for managing products, orders, users, and inventory
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wow Market - Admin Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0b1224;
+            color: #e5e7eb;
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-right: 1px solid rgba(34, 197, 94, 0.2);
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .sidebar-header img {
+            height: 35px;
+        }
+        
+        .sidebar-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            color: #22c55e;
+        }
+        
+        .sidebar-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .sidebar-menu a {
+            color: #9ca3af;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sidebar-menu a:hover {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+        }
+        
+        .sidebar-menu a.active {
+            background-color: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border-left: 3px solid #22c55e;
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 30px;
+            flex: 1;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            color: #22c55e;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            border-color: #22c55e;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+        }
+        
+        .stat-icon {
+            font-size: 32px;
+            color: #06b6d4;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #9ca3af;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            color: #22c55e;
+            font-weight: 700;
+        }
+        
+        .section {
+            background-color: rgba(31, 41, 55, 0.5);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #22c55e;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        table th {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+        }
+        
+        table tr:hover {
+            background-color: rgba(34, 197, 94, 0.05);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .status-pending {
+            background-color: rgba(251, 146, 60, 0.2);
+            color: #fb923c;
+        }
+        
+        .status-completed {
+            background-color: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+        
+        .status-failed {
+            background-color: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: #22c55e;
+            color: #0b1224;
+        }
+        
+        .btn-primary:hover {
+            background-color: #16a34a;
+        }
+        
+        .btn-danger {
+            background-color: #ef4444;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background-color: #dc2626;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 0;
+                overflow: hidden;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="../Business_Logo-removebg-preview.png" alt="Logo">
+                <h2>Admin</h2>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <a href="#dashboard" class="menu-item active" onclick="showSection('dashboard')">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </a>
+                <a href="#products" class="menu-item" onclick="showSection('products')">
+                    <i class="fas fa-boxes"></i> Products
+                </a>
+                <a href="#orders" class="menu-item" onclick="showSection('orders')">
+                    <i class="fas fa-shopping-cart"></i> Orders
+                </a>
+                <a href="#users" class="menu-item" onclick="showSection('users')">
+                    <i class="fas fa-users"></i> Users
+                </a>
+                <a href="#inventory" class="menu-item" onclick="showSection('inventory')">
+                    <i class="fas fa-warehouse"></i> Inventory
+                </a>
+                <a href="#reviews" class="menu-item" onclick="showSection('reviews')">
+                    <i class="fas fa-star"></i> Reviews
+                </a>
+                <a href="#settings" class="menu-item" onclick="showSection('settings')">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+                <hr style="border-color: rgba(34, 197, 94, 0.2); margin: 20px 0;">
+                <a href="../Wow-Market.html" class="menu-item">
+                    <i class="fas fa-home"></i> View Store
+                </a>
+                <a href="#logout" class="menu-item">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Admin Dashboard</h1>
+                <div class="user-info">
+                    <span>Welcome, Admin</span>
+                    <i class="fas fa-user-circle" style="font-size: 32px; color: #22c55e;"></i>
+                </div>
+            </div>
+            
+            <!-- Dashboard Section -->
+            <div id="dashboard" class="section-content">
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-shopping-bag"></i></div>
+                        <div class="stat-label">Total Orders</div>
+                        <div class="stat-value">1,234</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="stat-label">Revenue (This Month)</div>
+                        <div class="stat-value">$45,678</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-label">Total Users</div>
+                        <div class="stat-value">5,432</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-boxes"></i></div>
+                        <div class="stat-label">Products</div>
+                        <div class="stat-value">287</div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>Recent Orders</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#WOW-001</td>
+                                <td>John Smith</td>
+                                <td>$125.50</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td>2026-01-08</td>
+                            </tr>
+                            <tr>
+                                <td>#WOW-002</td>
+                                <td>Jane Doe</td>
+                                <td>$89.99</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>2026-01-08</td>
+                            </tr>
+                            <tr>
+                                <td>#WOW-003</td>
+                                <td>Bob Johnson</td>
+                                <td>$234.75</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td>2026-01-07</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Products Section -->
+            <div id="products" class="section" style="display: none;">
+                <h2>Product Management</h2>
+                <button class="btn btn-primary" onclick="alert('Add Product form would open here')">
+                    <i class="fas fa-plus"></i> Add Product
+                </button>
+                <table style="margin-top: 20px;">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nike Air Max</td>
+                            <td>Shoes</td>
+                            <td>$129.99</td>
+                            <td>45</td>
+                            <td>
+                                <button class="btn btn-primary" style="font-size: 12px; padding: 6px 12px;">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Orders Section -->
+            <div id="orders" class="section" style="display: none;">
+                <h2>Order Management</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#WOW-001</td>
+                            <td>John Smith</td>
+                            <td>$125.50</td>
+                            <td><span class="status-badge status-completed">Shipped</span></td>
+                            <td><span class="status-badge status-completed">Paid</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Users Section -->
+            <div id="users" class="section" style="display: none;">
+                <h2>User Management</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Joined</th>
+                            <th>Orders</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>johnsmith</td>
+                            <td>john@email.com</td>
+                            <td>2025-11-15</td>
+                            <td>12</td>
+                            <td><span class="status-badge status-completed">Active</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Inventory Section -->
+            <div id="inventory" class="section" style="display: none;">
+                <h2>Inventory Management</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Stock</th>
+                            <th>Reserved</th>
+                            <th>Available</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nike Air Max</td>
+                            <td>100</td>
+                            <td>25</td>
+                            <td>75</td>
+                            <td><span class="status-badge status-completed">Adequate</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Reviews Section -->
+            <div id="reviews" class="section" style="display: none;">
+                <h2>Customer Reviews</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Customer</th>
+                            <th>Rating</th>
+                            <th>Review</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nike Air Max</td>
+                            <td>John Smith</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td>Great product!</td>
+                            <td>2026-01-05</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Settings Section -->
+            <div id="settings" class="section" style="display: none;">
+                <h2>Admin Settings</h2>
+                <p>Settings and configuration options would go here.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+            document.getElementById('dashboard').style.display = 'none';
+            
+            // Remove active class from menu
+            document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+            
+            // Show selected section
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.style.display = 'block';
+                event.target.closest('a').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
