@@ -652,6 +652,254 @@
             color: #6b7280;
         }
         
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: #0b1224;
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.5s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .promo-banner i {
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(31, 41, 55, 0.95);
+            border: 1px solid #22c55e;
+            border-radius: 12px;
+            padding: 16px 20px;
+            min-width: 300px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            display: none;
+            z-index: 10000;
+            animation: slideInRight 0.3s ease;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .toast.show {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .toast i {
+            font-size: 24px;
+            color: #22c55e;
+        }
+        
+        .toast-content {
+            flex: 1;
+        }
+        
+        .toast-title {
+            font-weight: 600;
+            color: #22c55e;
+            margin-bottom: 4px;
+        }
+        
+        .toast-message {
+            font-size: 14px;
+            color: #9ca3af;
+        }
+        
+        /* Quick View Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 5000;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-overlay.show {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: rgba(31, 41, 55, 0.95);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: scaleIn 0.3s ease;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-close {
+            background: transparent;
+            border: none;
+            color: #9ca3af;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: #ef4444;
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .modal-product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .modal-product-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            color: #22c55e;
+            margin-bottom: 10px;
+        }
+        
+        .modal-product-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #22c55e;
+            margin-bottom: 15px;
+        }
+        
+        .modal-product-desc {
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .btn-modal {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-modal-primary {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: #0b1224;
+        }
+        
+        .btn-modal-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+        }
+        
+        .btn-modal-secondary {
+            background: transparent;
+            color: #22c55e;
+            border: 1px solid #22c55e;
+        }
+        
+        .btn-modal-secondary:hover {
+            background: rgba(34, 197, 94, 0.1);
+        }
+        
+        /* Product Badge */
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #ef4444;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 10;
+        }
+        
+        .product-badge.new {
+            background: #22c55e;
+        }
+        
+        .product-badge.sale {
+            background: #f59e0b;
+        }
+        
         @media (max-width: 768px) {
             .hero h2 {
                 font-size: 32px;
@@ -672,6 +920,17 @@
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
                 gap: 16px;
             }
+            
+            .toast {
+                bottom: 20px;
+                right: 20px;
+                left: 20px;
+                min-width: auto;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
         }
     </style>
 </head>
@@ -679,6 +938,46 @@
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="spinner"></div>
+    </div>
+    
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        <i class="fas fa-bolt"></i>
+        <span>FREE SHIPPING on orders over $50! Limited Time Offer! 🎉</span>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <div class="toast-content">
+            <div class="toast-title" id="toastTitle">Success!</div>
+            <div class="toast-message" id="toastMessage">Item added to cart</div>
+        </div>
+    </div>
+    
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quickViewModal" onclick="closeQuickView(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 class="modal-product-title" id="modalTitle">Product Details</h3>
+                <button class="modal-close" onclick="closeQuickView()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <img class="modal-product-image" id="modalImage" src="" alt="Product">
+                <div class="modal-product-price" id="modalPrice">$0.00</div>
+                <div class="modal-product-desc" id="modalDesc">
+                    Premium quality product with excellent features. Perfect for your needs with fast shipping and great customer service.
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-modal btn-modal-primary" onclick="addToCartFromModal()">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                    <button class="btn-modal btn-modal-secondary" onclick="closeQuickView()">
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
     
     <div class="promo-banner">
@@ -839,16 +1138,30 @@
         ];
         
         const productGrid = document.getElementById('productGrid');
-        featuredProducts.forEach(product => {
+        featuredProducts.forEach((product, index) => {
             const card = document.createElement('div');
             card.className = 'product-card';
             card.setAttribute('data-name', product.name.toLowerCase());
+            card.setAttribute('data-price', product.price);
+            card.setAttribute('data-rating', product.rating);
+            card.style.position = 'relative';
+            
+            // Add badge for first 3 products
+            let badge = '';
+            if (index === 0) badge = '<span class="product-badge new">NEW</span>';
+            else if (index === 1) badge = '<span class="product-badge sale">SALE</span>';
+            else if (index === 2) badge = '<span class="product-badge">HOT</span>';
+            
             card.innerHTML = `
+                ${badge}
                 <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200x200?text=${product.name.replace(/ /g, '+')}'">
                 <div class="product-info">
                     <div class="product-name">${product.name}</div>
                     <div class="product-price">${product.price}</div>
                     <div class="product-rating"><span class="star">${product.rating}</span></div>
+                    <button class="btn-add-cart" onclick="quickView(this)" style="background:#06b6d4; margin-bottom:8px;">
+                        <i class="fas fa-eye"></i> Quick View
+                    </button>
                     <a href="pages/purchase.html" class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             `;
@@ -1009,6 +1322,81 @@
         
         // Initialize auth state on page load
         checkUserAuth();
+        
+        // ===== Modern UI Features =====
+        
+        // Show toast notification
+        function showToast(title, message, duration = 3000) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, duration);
+        }
+        
+        // Quick View Modal
+        let currentQuickViewProduct = null;
+        
+        function quickView(button) {
+            const card = button.closest('.product-card');
+            const name = card.querySelector('.product-name').textContent;
+            const price = card.querySelector('.product-price').textContent;
+            const rating = card.querySelector('.product-rating .star').textContent;
+            const image = card.querySelector('img').src;
+            
+            currentQuickViewProduct = { name, price, rating, image };
+            
+            document.getElementById('modalTitle').textContent = name;
+            document.getElementById('modalPrice').textContent = price;
+            document.getElementById('modalImage').src = image;
+            document.getElementById('modalDesc').textContent = `${name} - Premium quality product with ${rating} rating. Fast shipping available. Limited stock!`;
+            
+            document.getElementById('quickViewModal').classList.add('show');
+        }
+        
+        function closeQuickView(event) {
+            if (!event || event.target === event.currentTarget) {
+                document.getElementById('quickViewModal').classList.remove('show');
+                currentQuickViewProduct = null;
+            }
+        }
+        
+        function addToCartFromModal() {
+            if (!currentQuickViewProduct) return;
+            
+            // Get cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('wowMarketCart') || '[]');
+            
+            // Check if product exists
+            const existingItem = cart.find(item => item.name === currentQuickViewProduct.name);
+            if (existingItem) {
+                existingItem.quantity = (existingItem.quantity || 1) + 1;
+            } else {
+                cart.push({ 
+                    name: currentQuickViewProduct.name, 
+                    price: currentQuickViewProduct.price, 
+                    quantity: 1 
+                });
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('wowMarketCart', JSON.stringify(cart));
+            updateCartBadge();
+            
+            // Show toast and close modal
+            showToast('Added to Cart!', `${currentQuickViewProduct.name} has been added to your cart.`);
+            closeQuickView();
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeQuickView();
+            }
+        });
     </script>
 </body>
 </html>
