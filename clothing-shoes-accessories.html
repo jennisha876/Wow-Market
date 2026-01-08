@@ -1,14 +1,316 @@
-<!-- Jennisha Smith Code-->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>WOW-MARKET</title> 
-        <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="style1.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes & Accessories - WOW Market</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Business_Logo-removebg-preview.png">
+    <style>
+        :root {
+            --bg: #0b1224;
+            --text: #e0e7ff;
+            --accent: #22c55e;
+            --accent-light: #06b6d4;
+            --border: #1f3a5f;
+            --card-bg: rgba(31, 41, 55, 0.5);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--bg) 0%, #1f3a5f 100%);
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent) !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--text) !important;
+            margin-left: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--accent) !important;
+        }
+        
+        .category-hero {
+            background: linear-gradient(135deg, #1f3a5f 0%, var(--bg) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 2rem;
+        }
+        
+        .category-hero h1 {
+            color: var(--accent-light);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-hero p {
+            color: var(--text);
+            opacity: 0.9;
+        }
+        
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem 3rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: rgba(15, 23, 42, 0.8);
+        }
+        
+        .product-info {
+            padding: 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-name {
+            color: var(--accent-light);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-rating {
+            color: #fbbf24;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-add-cart {
+            background-color: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-add-cart:hover {
+            background-color: #16a34a;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--bg) 0%, #1f3a5f 100%);
+            border-top: 2px solid var(--accent);
+            padding: 2rem 0;
+            margin-top: 3rem;
+            color: var(--text);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .footer-section a {
+            color: var(--text);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--accent);
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="Wow-Market.html">
+                    <i class="fas fa-shopping-bag"></i> WOW MARKET
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="Wow-Market.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="clothing-shoes-accessories.html">Shoes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ELECTRONICS.html">Electronics</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pharmacy.html">Pharmacy</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Pet&Toys.html">Pets</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="category-hero">
+        <h1>Shoes & Accessories</h1>
+        <p>Discover our premium collection of stylish shoes and accessories</p>
+    </div>
+
+    <div class="products-container">
+        <div class="product-grid" id="productGrid"></div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About WOW Market</h4>
+                <p>Your trusted online marketplace for everyday essentials from shoes to electronics, pharmacy and pet supplies.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Shop</h4>
+                <a href="clothing-shoes-accessories.html">Shoes & Accessories</a>
+                <a href="ELECTRONICS.html">Electronics</a>
+                <a href="pharmacy.html">Pharmacy</a>
+                <a href="Pet&Toys.html">Pets & Toys</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="History.html">Our History</a>
+                <a href="MissionVision.html">Mission & Vision</a>
+                <a href="Contact.html">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 WOW Market. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const products = [
+            { id: 1, name: 'Premium Heels', price: '$45.99', image: 'heels.jpg', rating: '⭐⭐⭐⭐⭐ (124)' },
+            { id: 2, name: 'Casual Sneakers', price: '$65.99', image: 'sneakers.png', rating: '⭐⭐⭐⭐⭐ (98)' },
+            { id: 3, name: 'Elegant Flats', price: '$35.99', image: 'flats.png', rating: '⭐⭐⭐⭐ (87)' },
+            { id: 4, name: 'Winter Boots', price: '$89.99', image: 'boots.png', rating: '⭐⭐⭐⭐⭐ (156)' },
+            { id: 5, name: 'Comfortable Slippers', price: '$25.99', image: 'Slippers.png', rating: '⭐⭐⭐⭐ (64)' },
+            { id: 6, name: 'Luxury Heels', price: '$79.99', image: 'heels1.jpg', rating: '⭐⭐⭐⭐⭐ (112)' },
+            { id: 7, name: 'Athletic Shoes', price: '$75.99', image: 'sneakerw.png', rating: '⭐⭐⭐⭐⭐ (201)' },
+            { id: 8, name: 'Evening Shoes', price: '$59.99', image: 'heels2.jpg', rating: '⭐⭐⭐⭐ (73)' },
+            { id: 9, name: 'Party Heels', price: '$69.99', image: 'heels3.jpg', rating: '⭐⭐⭐⭐⭐ (145)' },
+            { id: 10, name: 'Leather Pumps', price: '$55.99', image: 'heels4.jpg', rating: '⭐⭐⭐⭐ (92)' }
+        ];
+
+        const productGrid = document.getElementById('productGrid');
+        
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-price">${product.price}</div>
+                    <div class="product-rating">${product.rating}</div>
+                    <a href="purchase.html" class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                </div>
+            `;
+            productGrid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <script src="https://kit.fontawesome.com/47a666ce63.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
