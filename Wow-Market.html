@@ -115,6 +115,129 @@
             text-align: center;
         }
         
+        .user-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .btn-signin {
+            padding: 8px 20px;
+            background-color: transparent;
+            color: #22c55e;
+            border: 1px solid #22c55e;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-signin:hover {
+            background-color: #22c55e;
+            color: #0b1224;
+        }
+        
+        .btn-account {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: #0b1224;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-account:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+        
+        .user-menu {
+            position: relative;
+        }
+        
+        .user-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background-color: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 6px;
+            color: #22c55e;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .user-button:hover {
+            background-color: rgba(34, 197, 94, 0.2);
+        }
+        
+        .user-button i {
+            font-size: 18px;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background: rgba(31, 41, 55, 0.95);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 8px;
+            min-width: 200px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            display: none;
+            z-index: 1000;
+        }
+        
+        .dropdown-menu.show {
+            display: block;
+            animation: fadeInDown 0.3s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+        }
+        
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+        }
+        
+        .dropdown-menu a i {
+            font-size: 16px;
+            width: 20px;
+        }
+        
         .search-bar {
             display: flex;
             align-items: center;
@@ -361,6 +484,129 @@
             transform: scale(1.05);
         }
         
+        .user-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .btn-signin {
+            padding: 8px 20px;
+            background-color: transparent;
+            color: #22c55e;
+            border: 1px solid #22c55e;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-signin:hover {
+            background-color: #22c55e;
+            color: #0b1224;
+        }
+        
+        .btn-account {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: #0b1224;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-account:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+        
+        .user-menu {
+            position: relative;
+        }
+        
+        .user-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background-color: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 6px;
+            color: #22c55e;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .user-button:hover {
+            background-color: rgba(34, 197, 94, 0.2);
+        }
+        
+        .user-button i {
+            font-size: 18px;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background: rgba(31, 41, 55, 0.95);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 8px;
+            min-width: 200px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            display: none;
+            z-index: 1000;
+        }
+        
+        .dropdown-menu.show {
+            display: block;
+            animation: fadeInDown 0.3s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+        }
+        
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+        }
+        
+        .dropdown-menu a i {
+            font-size: 16px;
+            width: 20px;
+        }
+        
         footer {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             border-top: 1px solid rgba(34, 197, 94, 0.2);
@@ -448,9 +694,44 @@
             <input id="searchInput" type="search" placeholder="Search products...">
             <button type="submit"><i class="fas fa-search"></i></button>
         </form>
-        <div class="cart-icon" onclick="window.location.href='purchase.html'" title="Shopping Cart">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-badge" id="cartBadge">0</span>
+        <div class="user-controls">
+            <div class="cart-icon" onclick="window.location.href='purchase.html'" title="Shopping Cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge" id="cartBadge">0</span>
+            </div>
+            
+            <!-- Guest User - Sign In/Account Buttons -->
+            <div id="guestControls" style="display: flex; gap: 10px;">
+                <a href="account.html" class="btn-signin">Sign In</a>
+                <a href="account.html" class="btn-account">Create Account</a>
+            </div>
+            
+            <!-- Logged In User - Dropdown Menu -->
+            <div id="userMenu" class="user-menu" style="display: none;">
+                <div class="user-button" onclick="toggleUserMenu()">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="userName">Account</span>
+                    <i class="fas fa-chevron-down" style="font-size: 12px;"></i>
+                </div>
+                <div id="dropdownMenu" class="dropdown-menu">
+                    <a href="#" onclick="viewOrders(event)">
+                        <i class="fas fa-box"></i>
+                        My Orders
+                    </a>
+                    <a href="#" onclick="viewProfile(event)">
+                        <i class="fas fa-user"></i>
+                        Profile
+                    </a>
+                    <a href="#" onclick="viewWishlist(event)">
+                        <i class="fas fa-heart"></i>
+                        Wishlist
+                    </a>
+                    <a href="#" onclick="logout(event)">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sign Out
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
     
@@ -642,6 +923,92 @@
         
         // Initialize cart badge on load
         updateCartBadge();
+        
+        // ===== User Authentication Functions =====
+        
+        // Check if user is logged in and update UI
+        function checkUserAuth() {
+            const token = localStorage.getItem('wowMarketToken');
+            const userStr = localStorage.getItem('wowMarketUser');
+            
+            if (token && userStr) {
+                try {
+                    const user = JSON.parse(userStr);
+                    // Show user menu, hide guest controls
+                    document.getElementById('userMenu').style.display = 'block';
+                    document.getElementById('guestControls').style.display = 'none';
+                    
+                    // Update user name
+                    const userName = user.firstName || user.username || 'Account';
+                    document.getElementById('userName').textContent = userName;
+                } catch (e) {
+                    console.error('Error parsing user data:', e);
+                    logout();
+                }
+            } else {
+                // Show guest controls, hide user menu
+                document.getElementById('userMenu').style.display = 'none';
+                document.getElementById('guestControls').style.display = 'flex';
+            }
+        }
+        
+        // Toggle user dropdown menu
+        function toggleUserMenu() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.classList.toggle('show');
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const userMenu = document.getElementById('userMenu');
+            const dropdown = document.getElementById('dropdownMenu');
+            
+            if (userMenu && !userMenu.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+        
+        // View orders
+        function viewOrders(event) {
+            event.preventDefault();
+            // TODO: Implement orders page
+            alert('My Orders page coming soon! You will be able to track all your purchases here.');
+        }
+        
+        // View profile
+        function viewProfile(event) {
+            event.preventDefault();
+            const user = JSON.parse(localStorage.getItem('wowMarketUser') || '{}');
+            alert(`Profile:\nName: ${user.firstName} ${user.lastName}\nEmail: ${user.email}\n\nProfile editing coming soon!`);
+        }
+        
+        // View wishlist
+        function viewWishlist(event) {
+            event.preventDefault();
+            alert('Wishlist feature coming soon! Save your favorite items for later.');
+        }
+        
+        // Logout function
+        function logout(event) {
+            if (event) event.preventDefault();
+            
+            // Clear auth data
+            localStorage.removeItem('wowMarketToken');
+            localStorage.removeItem('wowMarketUser');
+            localStorage.removeItem('wowMarketRememberMe');
+            
+            // Update UI
+            checkUserAuth();
+            
+            // Optional: Clear cart (uncomment if needed)
+            // localStorage.removeItem('wowMarketCart');
+            // updateCartBadge();
+            
+            alert('You have been signed out successfully!');
+        }
+        
+        // Initialize auth state on page load
+        checkUserAuth();
     </script>
 </body>
 </html>

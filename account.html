@@ -1,0 +1,613 @@
+<!--Project was created in 2022 by Jennisha Smith, Shani Parchment, Alethea Robinson, Lemard Sterling-->
+<!--Project is being updated in 2026 by Jennisha Smith-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In or Create Account - Wow Market</title>
+    <link rel="icon" type="image/x-icon" href="Business_Logo-removebg-preview.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0b1224 0%, #1e293b 100%);
+            color: #e5e7eb;
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.9);
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        header img {
+            height: 40px;
+            filter: brightness(1.2);
+        }
+        
+        header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            color: #22c55e;
+            margin: 0;
+        }
+        
+        /* Main Container */
+        .auth-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        
+        .auth-wrapper {
+            display: flex;
+            gap: 30px;
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        .auth-box {
+            background: rgba(31, 41, 55, 0.7);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 16px;
+            padding: 40px;
+            flex: 1;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+        }
+        
+        .auth-box h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #22c55e;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .auth-box p {
+            color: #9ca3af;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e5e7eb;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            background-color: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 8px;
+            color: #e5e7eb;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #22c55e;
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+        }
+        
+        .form-group input::placeholder {
+            color: #6b7280;
+        }
+        
+        .password-toggle {
+            position: relative;
+        }
+        
+        .password-toggle i {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .password-toggle i:hover {
+            color: #22c55e;
+        }
+        
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #9ca3af;
+            cursor: pointer;
+        }
+        
+        .checkbox-label input {
+            width: auto;
+            cursor: pointer;
+        }
+        
+        .forgot-link {
+            color: #22c55e;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .forgot-link:hover {
+            color: #16a34a;
+            text-decoration: underline;
+        }
+        
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: #0b1224;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+        }
+        
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(34, 197, 94, 0.2);
+        }
+        
+        .divider span {
+            padding: 0 15px;
+        }
+        
+        .social-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .btn-social {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 8px;
+            color: #e5e7eb;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-social:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #22c55e;
+        }
+        
+        .btn-social i {
+            font-size: 18px;
+        }
+        
+        .alert {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .alert.success {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+        }
+        
+        .alert.error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+        
+        .benefits {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .benefits h3 {
+            font-size: 16px;
+            color: #e5e7eb;
+            margin-bottom: 15px;
+        }
+        
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .benefits li {
+            padding: 8px 0;
+            color: #9ca3af;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .benefits li i {
+            color: #22c55e;
+            font-size: 16px;
+        }
+        
+        footer {
+            background: rgba(15, 23, 42, 0.9);
+            border-top: 1px solid rgba(34, 197, 94, 0.2);
+            padding: 20px;
+            text-align: center;
+            color: #6b7280;
+            font-size: 13px;
+        }
+        
+        footer a {
+            color: #22c55e;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: #16a34a;
+        }
+        
+        @media (max-width: 768px) {
+            .auth-wrapper {
+                flex-direction: column;
+            }
+            
+            .auth-box {
+                padding: 30px 20px;
+            }
+            
+            .social-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Business_Logo-removebg-preview.png" alt="Wow Market Logo">
+        <h1>Wow Market</h1>
+    </header>
+    
+    <div class="auth-container">
+        <div class="auth-wrapper">
+            <!-- Sign In Box -->
+            <div class="auth-box">
+                <h2>Sign In</h2>
+                <p>Welcome back! Sign in to your account</p>
+                
+                <div id="signinAlert" class="alert"></div>
+                
+                <form id="signinForm">
+                    <div class="form-group">
+                        <label for="signinEmail">Email Address</label>
+                        <input type="email" id="signinEmail" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signinPassword">Password</label>
+                        <div class="password-toggle">
+                            <input type="password" id="signinPassword" placeholder="Enter your password" required>
+                            <i class="fas fa-eye" onclick="togglePassword('signinPassword', this)"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                </form>
+                
+                <div class="divider">
+                    <span>Or continue with</span>
+                </div>
+                
+                <div class="social-buttons">
+                    <button class="btn-social" onclick="socialLogin('google')">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="btn-social" onclick="socialLogin('facebook')">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Create Account Box -->
+            <div class="auth-box">
+                <h2>Create Account</h2>
+                <p>Join Wow Market for exclusive deals!</p>
+                
+                <div id="signupAlert" class="alert"></div>
+                
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <div class="password-toggle">
+                            <input type="password" id="signupPassword" placeholder="Create a password (min. 8 characters)" required minlength="8">
+                            <i class="fas fa-eye" onclick="togglePassword('signupPassword', this)"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <div class="password-toggle">
+                            <input type="password" id="signupConfirmPassword" placeholder="Re-enter your password" required>
+                            <i class="fas fa-eye" onclick="togglePassword('signupConfirmPassword', this)"></i>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+                </form>
+                
+                <div class="benefits">
+                    <h3>Why join Wow Market?</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Exclusive member discounts</li>
+                        <li><i class="fas fa-check-circle"></i> Track your orders in real-time</li>
+                        <li><i class="fas fa-check-circle"></i> Save items to wishlist</li>
+                        <li><i class="fas fa-check-circle"></i> Fast & easy checkout</li>
+                        <li><i class="fas fa-check-circle"></i> Early access to sales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2022-2026 Wow Market. Created by Jennisha Smith, Shani Parchment, Alethea Robinson, Lemard Sterling. Updated by Jennisha Smith.</p>
+        <p><a href="Wow-Market.html">← Back to Home</a> | <a href="https://github.com/jennisha876/Wow-Market" target="_blank">GitHub Repository</a></p>
+    </footer>
+    
+    <script>
+        const API_BASE_URL = 'http://localhost:5000/api';
+        
+        // Toggle password visibility
+        function togglePassword(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+        
+        // Show alert message
+        function showAlert(alertId, message, type) {
+            const alert = document.getElementById(alertId);
+            alert.textContent = message;
+            alert.className = `alert ${type}`;
+            alert.style.display = 'block';
+            
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Handle Sign In
+        document.getElementById('signinForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('signinEmail').value;
+            const password = document.getElementById('signinPassword').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+            
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing in...';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Store token and user info
+                    localStorage.setItem('wowMarketToken', data.token);
+                    localStorage.setItem('wowMarketUser', JSON.stringify(data.user));
+                    
+                    if (rememberMe) {
+                        localStorage.setItem('wowMarketRememberMe', 'true');
+                    }
+                    
+                    showAlert('signinAlert', 'Sign in successful! Redirecting...', 'success');
+                    
+                    // Redirect to homepage
+                    setTimeout(() => {
+                        window.location.href = 'Wow-Market.html';
+                    }, 1500);
+                } else {
+                    showAlert('signinAlert', data.error?.message || 'Sign in failed. Please check your credentials.', 'error');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+                }
+            } catch (error) {
+                console.error('Sign in error:', error);
+                showAlert('signinAlert', 'Unable to connect to server. Please try again later.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+            }
+        });
+        
+        // Handle Sign Up
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('signupName').value.trim();
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('signupConfirmPassword').value;
+            
+            // Validate passwords match
+            if (password !== confirmPassword) {
+                showAlert('signupAlert', 'Passwords do not match!', 'error');
+                return;
+            }
+            
+            // Split name into first and last
+            const nameParts = name.split(' ');
+            const firstName = nameParts[0];
+            const lastName = nameParts.slice(1).join(' ') || firstName;
+            
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating account...';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/auth/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email,
+                        username: email.split('@')[0], // Use email prefix as username
+                        password,
+                        firstName,
+                        lastName
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Store token and user info
+                    localStorage.setItem('wowMarketToken', data.token);
+                    localStorage.setItem('wowMarketUser', JSON.stringify(data.user));
+                    
+                    showAlert('signupAlert', 'Account created successfully! Redirecting...', 'success');
+                    
+                    // Redirect to homepage
+                    setTimeout(() => {
+                        window.location.href = 'Wow-Market.html';
+                    }, 1500);
+                } else {
+                    showAlert('signupAlert', data.error?.message || 'Registration failed. Email may already be in use.', 'error');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-user-plus"></i> Create Account';
+                }
+            } catch (error) {
+                console.error('Sign up error:', error);
+                showAlert('signupAlert', 'Unable to connect to server. Please try again later.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-user-plus"></i> Create Account';
+            }
+        });
+        
+        // Social login (placeholder)
+        function socialLogin(provider) {
+            showAlert('signinAlert', `${provider.charAt(0).toUpperCase() + provider.slice(1)} login coming soon!`, 'error');
+        }
+        
+        // Check if user is already logged in
+        window.addEventListener('load', () => {
+            const token = localStorage.getItem('wowMarketToken');
+            if (token) {
+                // User already logged in, redirect to home
+                window.location.href = 'Wow-Market.html';
+            }
+        });
+    </script>
+</body>
+</html>
