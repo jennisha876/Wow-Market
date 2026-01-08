@@ -1,0 +1,149 @@
+/*Header*/
+
+header{
+    background-color:#339933;
+    background-size: cover;
+    padding: 70px;
+    font-family: 'Changa One', cursive;
+    text-align: center;   
+    font-weight: bold;
+    color: black;
+    z-index: 999;
+    
+}
+
+.cart1{
+   float: right;
+   margin-top: -50px;
+
+}
+
+.logo{
+    float:left;
+    margin-top:-55px;
+    margin-left: -100px; 
+    width: 100px;
+    height: 100px;
+}
+body{
+    background-color: white;
+}
+
+
+.navbar{
+    background-color: #4D82BF;
+    font-family: 'Changa One', cursive; 
+    
+}
+
+header{
+    text-align: center;   
+    padding: 20px;
+    font-family: 'Changa One', cursive; 
+    background-color: rgb(19, 243, 67);
+    background-size: cover;
+    font-weight: bold;
+    color: black;
+    z-index: 999;
+}
+
+
+.banner {
+    background-color: #FFFFFF;
+    color: #15fe29;
+    animation: move 10s linear infinite;
+    text-align: right;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  @keyframes move {
+    from { transform: translateX(100); }
+    to { transform: translateX(-100%); }
+  }
+
+#products{
+    text-align: center;
+}
+
+#products .pros {
+    width: 15%;
+    min-width: 100px;
+    padding: 15px 25px;
+    border: 1px solidcolor rgb(31, 227, 67);
+    border: radius 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px;
+    margin: 10px 0;
+    transition: 0.6s ease;
+    position: relative;
+}
+
+#products .pros-container{
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-around;
+    padding-top: 10px;
+    flex-wrap: wrap;
+}
+
+#products .pros:hover{
+    box-shadow: 10px 10px 20px;
+}
+
+#products .pros img{
+    width:100%;
+    border-radius:10px;
+}
+
+#products .pros .descrip{
+    text-align: start;
+}
+
+#products .pros .descrip span{
+    color: black;
+    font-size: medium;
+}
+
+#products .pros .descrip h3{
+    color: black;
+    font-size: medium;
+    text-align: start;
+}
+
+#products .pros .descrip i{
+    font-size: 19px;
+    color: rgb(243, 181, 25);
+}
+
+#products .pros .cart{
+    width: 30px;
+    height: 30px;
+    line-height: 35px;
+    border-radius: 15px;
+    background-color: rgb(198, 198, 241);
+    color: rgb(243, 240, 255);
+    border: 15px;
+    position: absolute;
+    bottom: 7%;
+    right: 10px;
+}
+
+/*Footer*/
+#footerr{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+#footerr li{
+    list-style: none;
+    padding: 0 20px;
+}
+
+#footerr li a{
+    text-decoration: none;
+    font-size: medium;
+    font-weight: 600;
+    color: black;
+}
