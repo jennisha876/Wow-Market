@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pets & Toys - Wow Market</title>
+    <title>Contact Us - Wow Market</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -17,7 +17,6 @@
             background-color: #0b1224;
             color: #e5e7eb;
             font-family: 'DM Sans', sans-serif;
-            overflow-x: hidden;
         }
         
         header {
@@ -38,7 +37,6 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 24px;
             color: #22c55e;
-            margin: 0;
         }
         
         nav {
@@ -64,104 +62,105 @@
             background-color: rgba(34, 197, 94, 0.1);
         }
         
-        .hero {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
-        }
-        
-        .hero h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 42px;
-            color: #22c55e;
-            margin-bottom: 10px;
-        }
-        
-        .hero p {
-            font-size: 16px;
-            color: #9ca3af;
-        }
-        
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 40px auto;
             padding: 40px 20px;
         }
         
-        .product-grid {
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+            color: #22c55e;
+            margin-bottom: 30px;
+        }
+        
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 24px;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             margin-bottom: 40px;
         }
         
-        .product-card {
+        .contact-info {
+            display: grid;
+            gap: 25px;
+        }
+        
+        .info-box {
             background-color: rgba(31, 41, 55, 0.5);
             border: 1px solid rgba(34, 197, 94, 0.2);
             border-radius: 12px;
-            padding: 16px;
+            padding: 25px;
             transition: all 0.3s ease;
-            cursor: pointer;
         }
         
-        .product-card:hover {
+        .info-box:hover {
             border-color: #22c55e;
             box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
-            transform: translateY(-5px);
         }
         
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 12px;
-        }
-        
-        .product-info {
-            padding: 8px 0;
-        }
-        
-        .product-name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            color: #e5e7eb;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-        
-        .product-price {
-            font-size: 18px;
+        .info-box h3 {
             color: #22c55e;
-            font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-size: 18px;
         }
         
-        .product-rating {
-            font-size: 12px;
+        .info-box p {
             color: #9ca3af;
-            margin-bottom: 12px;
+            line-height: 1.6;
         }
         
-        .btn-add-cart {
-            display: inline-block;
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #22c55e;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(31, 41, 55, 0.7);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 6px;
+            color: #e5e7eb;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #22c55e;
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .btn-submit {
             background-color: #22c55e;
             color: #0b1224;
-            padding: 8px 16px;
+            padding: 12px 30px;
+            border: none;
             border-radius: 6px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
+            cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            text-align: center;
         }
         
-        .btn-add-cart:hover {
+        .btn-submit:hover {
             background-color: #16a34a;
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
         
         footer {
@@ -210,25 +209,24 @@
         }
         
         @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 28px;
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
             
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 16px;
+            h2 {
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="Business_Logo-removebg-preview.png" alt="Wow Market Logo">
-        <h1>Pets & Toys</h1>
+        <img src="../images/Business_Logo-removebg-preview.png" alt="Wow Market Logo">
+        <h1>Contact Us</h1>
     </header>
     
     <nav>
-        <a href="Wow-Market.html">Home</a>
+        <a href="../Wow-Market.html">Home</a>
         <a href="clothing-shoes-accessories.html">Shoes & Accessories</a>
         <a href="ELECTRONICS.html">Electronics</a>
         <a href="pharmacy.html">Pharmacy</a>
@@ -238,13 +236,65 @@
         <a href="purchase.html" style="float: right; color: #22c55e;">🛒 SHOP</a>
     </nav>
     
-    <div class="hero">
-        <h2>Pets & Toys</h2>
-        <p>Everything your pets and kids need for fun and happiness</p>
-    </div>
-    
     <div class="container">
-        <div class="product-grid" id="productGrid"></div>
+        <h2>Get in Touch</h2>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="info-box">
+                    <h3><i class="fas fa-phone"></i> Phone</h3>
+                    <p>1-800-123-4567</p>
+                    <p style="font-size: 13px; margin-top: 10px;">Available Mon-Fri, 9AM-6PM EST</p>
+                </div>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>support@wowmarket.com</p>
+                    <p style="font-size: 13px; margin-top: 10px;">We'll respond within 24 hours</p>
+                </div>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                    <p>Wow Market Headquarters<br>123 Commerce Street<br>Business City, BC 12345</p>
+                </div>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-clock"></i> Hours</h3>
+                    <p>Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM<br>Sunday: Closed</p>
+                </div>
+            </div>
+            
+            <div>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us more..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+                </form>
+            </div>
+        </div>
     </div>
     
     <footer>
@@ -275,33 +325,10 @@
     </footer>
     
     <script>
-        const products = [
-            { id: 1, name: 'Premium Dog Food (10lbs)', price: '$39.99', image: 'https://via.placeholder.com/200x200?text=DogFood', rating: '⭐⭐⭐⭐⭐ (521)' },
-            { id: 2, name: 'Cat Litter Box Deluxe', price: '$49.99', image: 'https://via.placeholder.com/200x200?text=CatBox', rating: '⭐⭐⭐⭐⭐ (387)' },
-            { id: 3, name: 'Pet Bed Orthopedic XL', price: '$89.99', image: 'https://via.placeholder.com/200x200?text=PetBed', rating: '⭐⭐⭐⭐⭐ (456)' },
-            { id: 4, name: 'Interactive Dog Toy Set', price: '$24.99', image: 'https://via.placeholder.com/200x200?text=DogToys', rating: '⭐⭐⭐⭐⭐ (678)' },
-            { id: 5, name: 'Premium Cat Food Mix', price: '$34.99', image: 'https://via.placeholder.com/200x200?text=CatFood', rating: '⭐⭐⭐⭐⭐ (412)' },
-            { id: 6, name: 'Bird Cage with Stand', price: '$129.99', image: 'https://via.placeholder.com/200x200?text=BirdCage', rating: '⭐⭐⭐⭐⭐ (234)' },
-            { id: 7, name: 'Toy Building Blocks 500pc', price: '$29.99', image: 'https://via.placeholder.com/200x200?text=Blocks', rating: '⭐⭐⭐⭐⭐ (892)' },
-            { id: 8, name: 'Remote Control Robot Toy', price: '$69.99', image: 'https://via.placeholder.com/200x200?text=RCRobot', rating: '⭐⭐⭐⭐⭐ (445)' },
-            { id: 9, name: 'Puzzle Game Collection', price: '$39.99', image: 'https://via.placeholder.com/200x200?text=Puzzles', rating: '⭐⭐⭐⭐⭐ (534)' },
-            { id: 10, name: 'Premium Aquarium Setup', price: '$199.99', image: 'https://via.placeholder.com/200x200?text=Aquarium', rating: '⭐⭐⭐⭐⭐ (189)' }
-        ];
-        
-        const productGrid = document.getElementById('productGrid');
-        products.forEach(product => {
-            const card = document.createElement('div');
-            card.className = 'product-card';
-            card.innerHTML = `
-                <img src="${product.image}" alt="${product.name}" class="product-image">
-                <div class="product-info">
-                    <div class="product-name">${product.name}</div>
-                    <div class="product-price">${product.price}</div>
-                    <div class="product-rating">${product.rating}</div>
-                    <a href="purchase.html" class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            `;
-            productGrid.appendChild(card);
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for contacting us! We will respond shortly.');
+            this.reset();
         });
     </script>
 </body>

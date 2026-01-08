@@ -24,6 +24,46 @@ Wow Market is a modern, fully-responsive e-commerce platform featuring multiple 
 
 ---
 
+## 📁 Project Structure
+
+```
+Wow-Market/
+├── 📄 Wow-Market.html          # Homepage (main entry point)
+├── 📄 account.html              # Login/Registration page
+├── 📄 README.md                 # Project documentation
+├── 📁 pages/                    # All category & info pages
+│   ├── clothing-shoes-accessories.html
+│   ├── ELECTRONICS.html
+│   ├── pharmacy.html
+│   ├── Pet&Toys.html
+│   ├── purchase.html
+│   ├── Contact.html
+│   ├── History.html
+│   ├── MissionVision.html
+│   └── Group assignment.html
+├── 📁 images/                   # All images (logos, products, icons)
+│   ├── Business_Logo-removebg-preview.png
+│   ├── Product images (.jpg, .png, .webp)
+│   └── Marketing assets
+├── 📁 css/                      # Stylesheets
+│   └── style1.css
+├── 📁 videos/                   # Video assets
+│   └── promo-video.mp4
+├── 📁 admin/                    # Admin dashboard
+│   └── dashboard.html
+├── 📁 backend/                  # Node.js/Express API
+│   ├── server.js
+│   ├── package.json
+│   ├── database.sql
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   └── config/
+└── 📁 assets/                   # Additional assets
+```
+
+---
+
 ## 🎨 Design Features
 
 ### Modern Dark Theme

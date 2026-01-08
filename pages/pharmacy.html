@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission & Vision - Wow Market</title>
+    <title>Pharmacy - Wow Market</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -17,6 +17,7 @@
             background-color: #0b1224;
             color: #e5e7eb;
             font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
         }
         
         header {
@@ -37,6 +38,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 24px;
             color: #22c55e;
+            margin: 0;
         }
         
         nav {
@@ -62,92 +64,104 @@
             background-color: rgba(34, 197, 94, 0.1);
         }
         
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 40px 20px;
-        }
-        
-        h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 36px;
-            color: #22c55e;
-            margin-bottom: 30px;
+        .hero {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+            padding: 60px 20px;
             text-align: center;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
         }
         
-        .statement {
-            background-color: rgba(31, 41, 55, 0.5);
-            border: 2px solid rgba(34, 197, 94, 0.3);
-            border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 40px;
-            transition: all 0.3s ease;
-        }
-        
-        .statement:hover {
-            border-color: #22c55e;
-            box-shadow: 0 0 25px rgba(34, 197, 94, 0.25);
-        }
-        
-        .statement-icon {
-            color: #22c55e;
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .statement-title {
+        .hero h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            color: #22c55e;
-            margin-bottom: 15px;
-        }
-        
-        .statement-content {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #9ca3af;
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-        
-        .value-card {
-            background-color: rgba(31, 41, 55, 0.5);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .value-card:hover {
-            border-color: #22c55e;
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
-            transform: translateY(-10px);
-        }
-        
-        .value-icon {
-            color: #06b6d4;
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-        
-        .value-name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 18px;
+            font-size: 42px;
             color: #22c55e;
             margin-bottom: 10px;
         }
         
-        .value-desc {
+        .hero p {
+            font-size: 16px;
             color: #9ca3af;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background-color: rgba(31, 41, 55, 0.5);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            border-color: #22c55e;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .product-info {
+            padding: 8px 0;
+        }
+        
+        .product-name {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 14px;
-            line-height: 1.6;
+            font-weight: 600;
+            color: #e5e7eb;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        
+        .product-price {
+            font-size: 18px;
+            color: #22c55e;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .product-rating {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-bottom: 12px;
+        }
+        
+        .btn-add-cart {
+            display: inline-block;
+            background-color: #22c55e;
+            color: #0b1224;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .btn-add-cart:hover {
+            background-color: #16a34a;
+            transform: scale(1.05);
         }
         
         footer {
@@ -196,24 +210,25 @@
         }
         
         @media (max-width: 768px) {
-            .statement {
-                padding: 25px;
+            .hero h2 {
+                font-size: 28px;
             }
             
-            h2 {
-                font-size: 24px;
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 16px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="Business_Logo-removebg-preview.png" alt="Wow Market Logo">
-        <h1>Mission & Vision</h1>
+        <img src="../images/Business_Logo-removebg-preview.png" alt="Wow Market Logo">
+        <h1>Pharmacy</h1>
     </header>
     
     <nav>
-        <a href="Wow-Market.html">Home</a>
+        <a href="../Wow-Market.html">Home</a>
         <a href="clothing-shoes-accessories.html">Shoes & Accessories</a>
         <a href="ELECTRONICS.html">Electronics</a>
         <a href="pharmacy.html">Pharmacy</a>
@@ -223,78 +238,13 @@
         <a href="purchase.html" style="float: right; color: #22c55e;">🛒 SHOP</a>
     </nav>
     
+    <div class="hero">
+        <h2>Pharmacy & Health Products</h2>
+        <p>Quality health and wellness products at your fingertips</p>
+    </div>
+    
     <div class="container">
-        <div class="statement">
-            <div class="statement-icon">
-                <i class="fas fa-bullseye"></i>
-            </div>
-            <div class="statement-title">Our Mission</div>
-            <div class="statement-content">
-                To empower global consumers by providing access to high-quality products at affordable prices. We strive to create a seamless shopping experience that combines convenience, trust, and exceptional customer service. Our mission is to be the most reliable and customer-centric online marketplace, delivering value that exceeds expectations in every transaction.
-            </div>
-        </div>
-        
-        <div class="statement">
-            <div class="statement-icon">
-                <i class="fas fa-rocket"></i>
-            </div>
-            <div class="statement-title">Our Vision</div>
-            <div class="statement-content">
-                To become a globally recognized e-commerce leader that sets industry standards for innovation, quality, and customer satisfaction. We envision a future where Wow Market is the preferred destination for shoppers worldwide, known for diverse product selection, competitive pricing, sustainable practices, and a commitment to making online shopping accessible and enjoyable for everyone.
-            </div>
-        </div>
-        
-        <h2 style="margin-top: 60px;">Our Core Values</h2>
-        
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <div class="value-name">Customer First</div>
-                <div class="value-desc">We prioritize customer needs and satisfaction in every decision we make</div>
-            </div>
-            
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div class="value-name">Integrity</div>
-                <div class="value-desc">We operate with transparency and ethical practices in all business dealings</div>
-            </div>
-            
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <div class="value-name">Innovation</div>
-                <div class="value-desc">We continuously improve our technology and services to serve you better</div>
-            </div>
-            
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <div class="value-name">Sustainability</div>
-                <div class="value-desc">We are committed to environmental responsibility and sustainable practices</div>
-            </div>
-            
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <div class="value-name">Partnership</div>
-                <div class="value-desc">We build strong relationships with customers, vendors, and community</div>
-            </div>
-            
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-trophy"></i>
-                </div>
-                <div class="value-name">Excellence</div>
-                <div class="value-desc">We strive for excellence in quality, service, and customer experience</div>
-            </div>
-        </div>
+        <div class="product-grid" id="productGrid"></div>
     </div>
     
     <footer>
@@ -323,5 +273,34 @@
             <p>&copy; 2024 Wow Market. All rights reserved.</p>
         </div>
     </footer>
+    
+    <script>
+        const products = [
+            { id: 1, name: 'Aspirin 500mg (100 tablets)', price: '$15.99', image: 'https://via.placeholder.com/200x200?text=Aspirin', rating: '⭐⭐⭐⭐⭐ (342)' },
+            { id: 2, name: 'Ibuprofen 200mg (50 tablets)', price: '$12.99', image: 'https://via.placeholder.com/200x200?text=Ibuprofen', rating: '⭐⭐⭐⭐⭐ (428)' },
+            { id: 3, name: 'Vitamin C 1000mg (60 tablets)', price: '$18.99', image: 'https://via.placeholder.com/200x200?text=VitaminC', rating: '⭐⭐⭐⭐⭐ (256)' },
+            { id: 4, name: 'Multivitamin Daily (30 tablets)', price: '$22.99', image: 'https://via.placeholder.com/200x200?text=Multivitamin', rating: '⭐⭐⭐⭐⭐ (389)' },
+            { id: 5, name: 'Zinc Supplements (90 tablets)', price: '$16.99', image: 'https://via.placeholder.com/200x200?text=Zinc', rating: '⭐⭐⭐⭐⭐ (201)' },
+            { id: 6, name: 'Calcium 600mg (120 tablets)', price: '$19.99', image: 'https://via.placeholder.com/200x200?text=Calcium', rating: '⭐⭐⭐⭐⭐ (315)' },
+            { id: 7, name: 'Omega-3 Fish Oil (60 capsules)', price: '$24.99', image: 'https://via.placeholder.com/200x200?text=Omega3', rating: '⭐⭐⭐⭐⭐ (467)' },
+            { id: 8, name: 'Probiotics 10B (30 capsules)', price: '$28.99', image: 'https://via.placeholder.com/200x200?text=Probiotics', rating: '⭐⭐⭐⭐⭐ (378)' }
+        ];
+        
+        const productGrid = document.getElementById('productGrid');
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-price">${product.price}</div>
+                    <div class="product-rating">${product.rating}</div>
+                    <a href="purchase.html" class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                </div>
+            `;
+            productGrid.appendChild(card);
+        });
+    </script>
 </body>
 </html>

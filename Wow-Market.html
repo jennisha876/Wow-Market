@@ -687,7 +687,7 @@
     
     <header>
         <div style="display: flex; align-items: center; gap: 15px;">
-            <img src="Business_Logo-removebg-preview.png" alt="Wow Market Logo">
+            <img src="images/Business_Logo-removebg-preview.png" alt="Wow Market Logo">
             <h1>Wow Market</h1>
         </div>
         <form class="search-bar" onsubmit="return handleSearch(event)">
@@ -695,7 +695,7 @@
             <button type="submit"><i class="fas fa-search"></i></button>
         </form>
         <div class="user-controls">
-            <div class="cart-icon" onclick="window.location.href='purchase.html'" title="Shopping Cart">
+            <div class="cart-icon" onclick="window.location.href='pages/purchase.html'" title="Shopping Cart">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="cart-badge" id="cartBadge">0</span>
             </div>
@@ -737,13 +737,13 @@
     
     <nav>
         <a href="Wow-Market.html">Home</a>
-        <a href="clothing-shoes-accessories.html">Shoes & Accessories</a>
-        <a href="ELECTRONICS.html">Electronics</a>
-        <a href="pharmacy.html">Pharmacy</a>
-        <a href="Pet&Toys.html">Pets & Toys</a>
-        <a href="Contact.html">Contact</a>
-        <a href="History.html">About Us</a>
-        <a href="purchase.html" style="float: right; color: #22c55e; font-weight: 700;">🛒 SHOP NOW</a>
+        <a href="pages/clothing-shoes-accessories.html">Shoes & Accessories</a>
+        <a href="pages/ELECTRONICS.html">Electronics</a>
+        <a href="pages/pharmacy.html">Pharmacy</a>
+        <a href="pages/Pet&Toys.html">Pets & Toys</a>
+        <a href="pages/Contact.html">Contact</a>
+        <a href="pages/History.html">About Us</a>
+        <a href="pages/purchase.html" style="float: right; color: #22c55e; font-weight: 700;">🛒 SHOP NOW</a>
     </nav>
     
     <div class="hero">
@@ -755,28 +755,28 @@
         <h3 class="section-title">Shop by Category</h3>
         
         <div class="category-grid">
-            <a href="clothing-shoes-accessories.html" style="text-decoration: none;">
+            <a href="pages/clothing-shoes-accessories.html" style="text-decoration: none;">
                 <div class="category-card">
                     <div class="category-icon"><i class="fas fa-shoe-prints"></i></div>
                     <div class="category-name">Shoes & Accessories</div>
                 </div>
             </a>
             
-            <a href="ELECTRONICS.html" style="text-decoration: none;">
+            <a href="pages/ELECTRONICS.html" style="text-decoration: none;">
                 <div class="category-card">
                     <div class="category-icon"><i class="fas fa-tv"></i></div>
                     <div class="category-name">Electronics</div>
                 </div>
             </a>
             
-            <a href="pharmacy.html" style="text-decoration: none;">
+            <a href="pages/pharmacy.html" style="text-decoration: none;">
                 <div class="category-card">
                     <div class="category-icon"><i class="fas fa-pills"></i></div>
                     <div class="category-name">Pharmacy</div>
                 </div>
             </a>
             
-            <a href="Pet&Toys.html" style="text-decoration: none;">
+            <a href="pages/Pet&Toys.html" style="text-decoration: none;">
                 <div class="category-card">
                     <div class="category-icon"><i class="fas fa-paw"></i></div>
                     <div class="category-name">Pets & Toys</div>
@@ -800,11 +800,11 @@
             </div>
             <div>
                 <h4><i class="fas fa-link"></i> Quick Links</h4>
-                <a href="clothing-shoes-accessories.html">Shoes</a>
-                <a href="ELECTRONICS.html">Electronics</a>
-                <a href="pharmacy.html">Pharmacy</a>
-                <a href="Pet&Toys.html">Pets & Toys</a>
-                <a href="purchase.html">Checkout</a>
+                <a href="pages/clothing-shoes-accessories.html">Shoes</a>
+                <a href="pages/ELECTRONICS.html">Electronics</a>
+                <a href="pages/pharmacy.html">Pharmacy</a>
+                <a href="pages/Pet&Toys.html">Pets & Toys</a>
+                <a href="pages/purchase.html">Checkout</a>
             </div>
             <div>
                 <h4><i class="fas fa-headset"></i> Contact Us</h4>
@@ -849,7 +849,7 @@
                     <div class="product-name">${product.name}</div>
                     <div class="product-price">${product.price}</div>
                     <div class="product-rating"><span class="star">${product.rating}</span></div>
-                    <a href="purchase.html" class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <a href="pages/purchase.html" class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             `;
             productGrid.appendChild(card);
